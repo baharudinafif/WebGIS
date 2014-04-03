@@ -1,14 +1,21 @@
 <?php
 /* @var $this MessageController */
 
-$this->breadcrumbs=array(
-	'Message'=>array('/message'),
-	'Hello',
-);
+	$this->breadcrumbs=array('Message'=>array('/message'),'Hello',);
+	$connection = Yii::app()->db;
 ?>
 <h1><?php echo "Hello World!!"?></h1>
 
 <?php
 	echo $time;
-	echo CHtml::link('Go To : GoodBye',array('message/goodbye')); 
+	$result=$connection->createCommand()
+		-> select('*')
+		-> from ('Gunung')
+		-> where ('ID<2')
+		-> queryAll();
+	foreach($result as $row){
+		echo "<br>" . $row['Nama']." Ketinggian : " . $row['Ketinggian'];
+	}
+	echo CHtml::link('<br>Go To : GoodBye',array('message/goodbye')); 
+	
 ?>
