@@ -1,59 +1,164 @@
-<?php /* @var $this Controller */ ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en" />
+<?php 
+	require("header.php");
+?>
+<!---start-header---->
+<div class="header">
+	<div class="wrap">
+	<!--- start-logo---->
+	<div class="logo">
+		<a href="index.html"><img src="<?php echo $basedir;?>/images/logo.png" title="voyage" /></a>
+	</div>
+	<!--- //End-logo---->
+	<!--- start-top-nav---->
+	<div class="top-nav">
+			<ul class="flexy-menu thick orange">
+				<li class="active">  
+					<a href="index.html">
+						<div style="text-align:center;">
+							<img src="<?php echo $basedir?>/images/home.ico">
+						</div>						
+						Home
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div style="text-align:center;">
+							<img src="<?php echo $basedir?>/images/home.ico">
+						</div>							
+						Map
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div style="text-align:center;">
+							<img src="<?php echo $basedir?>/images/home.ico">
+						</div>						
+						Article
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div style="text-align:center;">
+							<img src="<?php echo $basedir?>/images/home.ico">
+						</div>						
+						About
+					</a>
+				</li>
+			</ul>
+			<div class="search-box">
+				<div id="sb-search" class="sb-search">
+					<form>
+						<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+						<input class="sb-search-submit" type="submit" value="">
+						<span class="sb-icon-search"  style="background:url(<?php echo $basedir?>/images/search-icon.png) no-repeat 0px 1px;"> </span>
+					</form>
+				</div>
+			</div>
+			<!----search-scripts---->
+			<script src="<?php echo $basedir?>/js/modernizr.custom.js"></script>
+			<script src="<?php echo $basedir?>/js/classie.js"></script>
+			<script src="<?php echo $basedir?>/js/uisearch.js"></script>
+			<script>
+				new UISearch( document.getElementById( 'sb-search' ) );
+			</script>
+			<!----//search-scripts---->
+	</div>
+	<!--- //End-top-nav---->
+	<div class="clear"> </div>
+</div>
+<!---//End-header---->
 
-	<!-- blueprint CSS framework -->
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
-	<!--[if lt IE 8]>
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
-	<![endif]-->
+<div class="web/images-slider">
+	<!-- start slider -->
+    <div id="fwslider">
+        <div class="slider_container">
+            <div class="slide"> 
+                <!-- Slide image -->
+                    <img src="<?php echo $basedir?>/images/papandayan/2.jpg"/>
+                <!-- /Slide image -->
+                <!-- Texts container -->
+                <div class="slide_content">
+                    <div class="slide_content_wrap">
+                        <!-- Text title -->
+                        <h4 class="title">To travel is to live</h4>
+                        <!-- /Text title -->
+                        <!-- Text description -->
+                        <p class="description">You Don't Need Magic to Disappear. All you need is a destination.</p>
+                        <!-- /Text description -->
+                        <div class="slide-btns description">
+                        	<ul>
+                        		<li><a class="mapbtn" href="#">Show on the map </a></li>
+                        		<li><a class="minfo" href="#">More info </a></li>
+                        		<div class="clear"> </div>
+                        	</ul>
+                        </div>
+                    </div>
+                    <div class="description news">
+                    	<p>
+                    		This is some text that is placed in the transparent box.
+						</p>
+					</div>
+                </div>
+                 <!-- /Texts container -->
+            </div>
+            <!-- /Duplicate to create more slides -->
+            <div class="slide">
+                <img src="<?php echo $basedir?>/images/papandayan/1.jpg" alt=""/>
+                <div class="slide_content">
+                     <div class="slide_content_wrap">
+                        <!-- Text title -->
+                        <h4 class="title">To travel is to live</h4>
+                        <!-- /Text title -->
+                        <!-- Text description -->
+                        <p class="description">You Don't Need Magic to Disappear. All you need is a destination.</p>
+                        <!-- /Text description -->
+                        <div class="slide-btns description">
+                        	<ul>
+                        		<li><a class="mapbtn" href="#">Show on the map </a></li>
+                        		<li><a class="minfo" href="#">More info </a></li>
+                        		<div class="clear"> </div>
+                        	</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/slide -->
+        </div>
+        <!--<div class="timers"> </div>-->
+        <div class="slidePrev"><span> </span></div>
+        <div class="slideNext"><span> </span></div>
+    </div>
+    <!--/slider -->
+</div>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
-
-	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
-</head>
-
-<body>
-
-<div class="container" id="page">
-
-	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-	</div><!-- header -->
-
-	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		)); ?>
-	</div><!-- mainmenu -->
-	<?php if(isset($this->breadcrumbs)):?>
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
-	<?php endif?>
-
-	<?php echo $content; ?>
-
-	<div class="clear"></div>
-
-	<div id="footer">
-		Copyright &copy; <?php echo date_default_timezone_set('Asia/Jakarta') ; ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
-	</div><!-- footer -->
-
-</div><!-- page -->
-
-</body>
-</html>
+<!----start-find-place---->
+<div class="find-place">
+	<div class="wrap">
+		<div class="p-h">
+			<span>FIND YOUR</span>
+			<label>MOUNTAIN</label>
+		</div>
+		<!---strat-date-piker---->
+		  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+		  <script>
+		  $(function() {
+		    $( "#datepicker" ).datepicker();
+		  });
+		  </script>
+		<!---/End-date-piker---->
+		<div class="p-ww">
+			<form>
+				<span> Province</span>
+				<input class="dest" type="text" value="Distination" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Distination';}">
+				<span> When</span>
+				<input class="date" id="datepicker" type="text" value="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Select date';}">
+				<input type="submit" value="Search" />
+			</form>
+		</div>
+		<div class="clear"> </div>
+	</div>
+</div>
+<!----//End-find-place---->
+<?php
+	require("footer.php")
+?>
